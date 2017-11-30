@@ -30,7 +30,7 @@ RUN	set -x \
     && JAVA_BUILD=16 \
     && JAVA_PATH=aa0333dd3019491ca4f6ddbe78cdb6d0 \
     && cd /tmp/ \
-    && wget --no-check-certificate -c --header "Cookie: oraclelicense=accept-securebackup-cookie" http://download.oracle.com/otn-pub/java/jdk/${VERSION}-b${JAVA_BUILD}/${JAVA_PATH}/jre-${VERSION}-linux-x64.tar.gz \
+    && wget --no-check-certificate -c -q --header "Cookie: oraclelicense=accept-securebackup-cookie" http://download.oracle.com/otn-pub/java/jdk/${VERSION}-b${JAVA_BUILD}/${JAVA_PATH}/jre-${VERSION}-linux-x64.tar.gz \
     && tar -zxvf jre-${VERSION}-linux-x64.tar.gz \
     && mkdir -p ${JAVA_HOME} \
     && mv /tmp/jre1.8.0_${JAVA_UPDATE} ${JAVA_HOME} \
