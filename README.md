@@ -3,7 +3,7 @@
 [![](https://images.microbadger.com/badges/image/lonly/docker-alpine-oraclejre8.svg)](http://microbadger.com/images/lonly/docker-alpine-oraclejre8)
 
 > This image is based on Alpine Linux image, which is only a 5MB image, and contains
-[OracleJDK 8](http://www.oracle.com/technetwork/java/javase/overview/index.html).
+[OracleJRE 8](http://www.oracle.com/technetwork/java/javase/overview/index.html).
 
 ## Introduction
 
