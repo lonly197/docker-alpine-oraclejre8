@@ -35,7 +35,6 @@ RUN	set -x \
     && mkdir -p ${JAVA_HOME} \
     && mv /tmp/jre1.8.0_${JAVA_UPDATE} ${JAVA_HOME} \
     ## Cleanup
-    && apk del .build-dependencies \
     && rm -rf "$JAVA_HOME/lib/plugin.jar" \
            "$JAVA_HOME/lib/ext/jfxrt.jar" \
            "$JAVA_HOME/bin/javaws" \
