@@ -11,9 +11,9 @@ LABEL \
     org.label-schema.license="Apache License 2.0" \
     org.label-schema.name="lonly/docker-alpine" \
     org.label-schema.url="https://github.com/lonly197" \
-    org.label-schema.description="Base and Clean Docker image with OracleJDK 8." \
+    org.label-schema.description="Minified Docker image with OracleJRE 8 to run Java applications." \
     org.label-schema.vcs-ref=$VCS_REF \
-    org.label-schema.vcs-url="https://github.com/lonly197/docker-alpine-oraclejdk8" \
+    org.label-schema.vcs-url="https://github.com/lonly197/docker-alpine-oraclejre8" \
     org.label-schema.vcs-type="Git" \
     org.label-schema.vendor="lonly197@qq.com" \
     org.label-schema.version=$VERSION \
@@ -21,7 +21,7 @@ LABEL \
 
 # Define environment 
 ENV	JAVA_HOME=/usr/lib/jvm/default-jvm \
-    PATH=$PATH:$JAVA_HOME:JAVA_HOME/bin:JAVA_HOME/jre:JAVA_HOME/jre/bin
+    PATH=$PATH:$JAVA_HOME/jre:JAVA_HOME/jre/bin
 
 # Install packages
 RUN	set -x \
@@ -29,15 +29,12 @@ RUN	set -x \
     && JAVA_UPDATE=152 \
     && JAVA_BUILD=16 \
     && JAVA_PATH=aa0333dd3019491ca4f6ddbe78cdb6d0 \
-    && wget --no-check-certificate -c --header "Cookie: oraclelicense=accept-securebackup-cookie" http://download.oracle.com/otn-pub/java/jdk/${VERSION}-b${JAVA_BUILD}/${JAVA_PATH}/jdk-${VERSION}-linux-x64.tar.gz | tar -xzf - -C /tmp \
+    && wget --no-check-certificate -c --header "Cookie: oraclelicense=accept-securebackup-cookie" http://download.oracle.com/otn-pub/java/jdk/${VERSION}-b${JAVA_BUILD}/${JAVA_PATH}/jre-${VERSION}-linux-x64.tar.gz | tar -xzf - -C /tmp \
     && mkdir -p /usr/lib/jvm \
     && mv /tmp/jdk1.8.0_${JAVA_UPDATE} ${JAVA_HOME} \
     ## Cleanup
     && apk del .build-dependencies \
-    && rm -rf "$JAVA_HOME/lib/missioncontrol" \
-           "$JAVA_HOME/lib/visualvm" \
-           "$JAVA_HOME/lib/"*javafx* \
-           "$JAVA_HOME/jre/lib/plugin.jar" \
+    && rm -rf "$JAVA_HOME/jre/lib/plugin.jar" \
            "$JAVA_HOME/jre/lib/ext/jfxrt.jar" \
            "$JAVA_HOME/jre/bin/javaws" \
            "$JAVA_HOME/jre/lib/javaws.jar" \
@@ -53,7 +50,7 @@ RUN	set -x \
            "$JAVA_HOME/jre/lib/amd64/libgstreamer-lite.so" \
            "$JAVA_HOME/jre/lib/amd64/"libjavafx*.so \
            "$JAVA_HOME/jre/lib/amd64/"libjfx*.so \
-    && rm -rf "$JAVA_HOME/jre/bin/jjs" \
+           "$JAVA_HOME/jre/bin/jjs" \
            "$JAVA_HOME/jre/bin/keytool" \
            "$JAVA_HOME/jre/bin/orbd" \
            "$JAVA_HOME/jre/bin/pack200" \
