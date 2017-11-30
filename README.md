@@ -1,6 +1,8 @@
 # docker-alpine-oraclejre8
 
-[![](https://images.microbadger.com/badges/image/lonly/docker-alpine-oraclejre8.svg)](http://microbadger.com/images/lonly/docker-alpine-oraclejre8)
+- [![](https://images.microbadger.com/badges/version/lonly/docker-alpine-oraclejre8.svg)](https://microbadger.com/images/lonly/docker-alpine-oraclejre8 "Get your own version badge on microbadger.com") [![](https://images.microbadger.com/badges/image/lonly/docker-alpine-oraclejre8.svg)](https://microbadger.com/images/lonly/docker-alpine-oraclejre8 "Get your own image badge on microbadger.com")
+
+- [![](https://images.microbadger.com/badges/version/lonly/docker-alpine-oraclejre8:8u152.svg)](https://microbadger.com/images/lonly/docker-alpine-oraclejre8:8u152 "Get your own version badge on microbadger.com") [![](https://images.microbadger.com/badges/image/lonly/docker-alpine-oraclejre8:8u152.svg)](https://microbadger.com/images/lonly/docker-alpine-oraclejre8:8u152 "Get your own image badge on microbadger.com")
 
 > This image is based on Alpine Linux image, which is only a 5MB image, and contains
 [OracleJRE 8](http://www.oracle.com/technetwork/java/javase/overview/index.html).
