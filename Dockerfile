@@ -1,4 +1,4 @@
-FROM lonly/docker-alpine-glibc:2.26-r0
+FROM lonly/docker-alpine-glibc
 
 ARG VERSION=8u152
 ARG BUILD_DATE
